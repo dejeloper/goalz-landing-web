@@ -11,7 +11,7 @@ export interface Props {
 }
 
 const pathname = Astro.url.pathname;
-const site = Astro.site ? Astro.site : "http://ziele.lat/";
+const site = Astro.site ? Astro.site : "https://ziele.lat/";
 const canonicalURL = new URL(pathname, site).toString();
 
 const resolvedImageWithDomain = new URL("/opengraph.jpg", site).toString();
