@@ -1,0 +1,69 @@
+---
+import Container from "@/components/Shared/container.astro";
+import PricingCard from "@/components/pricing-card.astro";
+
+const pricing = [
+  {
+    name: "Básico",
+    price: "$ 5",
+    popular: false,
+    features: [
+      "Manejo de objetivos",
+      "Gestión de tareas",
+      "Seguimiento del progreso",
+      "Notificaciones y recordatorios",
+      "Relacionar objetivos con tareas",
+    ],
+    button: {
+      text: "Próximamente",
+      link: "#register",
+    },
+  },
+  {
+    name: "Pro",
+    price: "$ 10",
+    popular: true,
+    features: [
+      "Todo el Plan Básico",
+      "Indicadores visuales",
+      "Reflexión diaria",
+      "Revisión periódica",
+      "Personalización",
+    ],
+    button: {
+      text: "Próximamente",
+      link: "#register",
+    },
+  },
+  {
+    name: "Premium",
+    price: "$ 20",
+    popular: false,
+    features: [
+      "Todo el Plan Pro",
+      "Análisis y Recomendaciones",
+      "Pensamientos y aprendizajes",
+      "Logros y recompensas",
+      "Objetivos con amigos",
+    ],
+    button: {
+      text: "Próximamente",
+      link: "#register",
+    },
+  },
+];
+---
+
+<Container>
+  <div class="mt-16 text-center" id="pricing">
+    <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Planes</h1>
+    <p class="text-lg mt-4 text-slate-600">
+      Tenemos varias caracteriticas que nos ayudan a gestionar mejor tus metas.
+      Para desbloquearlas debes seleccionar un plan.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    {pricing.map((item) => <PricingCard plan={item} />)}
+  </div>
+</Container>

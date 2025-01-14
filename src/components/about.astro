@@ -1,0 +1,71 @@
+---
+import { Picture } from "astro:assets";
+
+const team = [
+  {
+    name: "Anny Sanchez",
+    title: "Designer",
+    avatar: {
+      src: "/team/designer.webp",
+      alt: "Anny Sanchez",
+    },
+  },
+  {
+    name: "Jhonatan Guerrero",
+    title: "Developer",
+    avatar: {
+      src: "/team/developer.webp",
+      alt: "Jhonatan Guerrero",
+    },
+  },
+  {
+    name: "Orion Sanchez",
+    title: "Founder",
+    avatar: {
+      src: "/team/founder.webp",
+      alt: "Orion Sanchez",
+    },
+  },
+];
+---
+
+<div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16" id="about">
+  <h2 class="font-bold text-3xl text-gray-800">
+    Compartimos nuestro conocimiento y experiencia
+  </h2>
+  <p class="text-lg leading-relaxed text-slate-500">
+    El equipo de <strong>Ziele</strong> es una comunidad de desarrolladores y diseñadores
+    que se dedican a crear herramientas que ayuden a las personas a mejorar su vida.
+    Desde el 2018 mejorando el mundo.
+  </p>
+</div>
+<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+  {
+    team.map((item) => {
+      const site = `http://localhost:4321`;
+      // const site = Astro.site ? Astro.site : "http://ziele.lat/";
+      const avatar = item.avatar.src;
+      const urlAvatar = `${site}${avatar}`;
+
+      return (
+        <div class="group">
+          <div class="w-full aspect-square">
+            <Picture
+              src={urlAvatar}
+              alt={item.avatar.alt}
+              sizes="(max-width: 800px) 100vw, 400px"
+              width={400}
+              height={400}
+              class="w-full rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+            />
+          </div>
+
+          <div class="mt-4 text-center">
+            <h2 class="text-lg text-gray-800">{item.name}</h2>
+            <h3 class="text-sm text-slate-500">{item.title}</h3>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

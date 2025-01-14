@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Gestión de objetivos",
+    description:
+      "Permite crear, priorizar y organizar objetivos en categorías, con plazos ajustables y revisiones periódicas.",
+    icon: "bx:bxs-navigation",
+  },
+  {
+    title: "Gestión de tareas",
+    description:
+      "Incluye subtareas, tareas recurrentes y la posibilidad de asociarlas directamente con un objetivo.",
+    icon: "bx:bxs-edit",
+  },
+  {
+    title: "Seguimiento y análisis",
+    description:
+      "Registra el progreso, ofrece indicadores visuales, envía notificaciones y proporciona análisis para mejorar hábitos.",
+    icon: "bx:bxs-binoculars",
+  },
+  {
+    title: "Journal integrado",
+    description:
+      "Un espacio para reflexionar diariamente, registrar pensamientos y vincularlos con objetivos o tareas.",
+    icon: "bx:bxs-book",
+  },
+  {
+    title: "Personalización y experiencia del usuario",
+    description:
+      "Incluye un panel de control intuitivo, opciones de personalización, gamificación y sincronización con dispositivos.",
+    icon: "bx:bxs-cog",
+  },
+  {
+    title: "Colaboración y comunidad",
+    description:
+      "Facilita compartir objetivos con amigos o grupos pequeños para fomentar la motivación colectiva.",
+    icon: "bx:bxs-group",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0" id="features">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Tus metas están cada vez más cerca
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Ziele es una herramienta para gestionar tus metas, basandose en una nueva
+    estrategia de gestión. Con esta aplicación, podrás crear y gestionar tus
+    metas de forma organizada y eficiente.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-amber-500 rounded-full p-2 shrink-0">
+          <Icon class="text-white size-8" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "@/components/shared/link.astro";
+
+const { plan } = Astro.props;
+---
+
+<div
+  class="grid grid-rows-[auto_1fr_auto)_100px] w-full order-first lg:order-none border-2 border-amber-200 border-opacity-50 py-5 px-6 rounded-md"
+>
+  <div class="text-center">
+    <h4 class="text-lg font-medium text-gray-400">{plan.name}</h4><p
+      class="mt-3 text-4xl font-bold text-black md:text-4xl"
+    >
+      {plan.price}
+    </p>
+    <span class="text-gray-400 text-sm mt-4 font-bold">USD/MES</span>
+  </div>
+
+  <ul class="grid mt-8 text-left gap-y-4">
+    {
+      plan.features.map((item: any) => (
+        <li class="flex items-start gap-3 text-gray-800">
+          <Icon
+            class="text-amber-500 size-6"
+            name="bx:bxs-message-square-check"
+          />
+          <span>{item}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="flex flex-col justify-end mt-8">
+    <Link
+      href={plan.button.link}
+      block
+      style={plan.popular ? "customPrimary" : "customOutline"}
+      class="hover:border-amber-500/80"
+    >
+      {plan.button.text}
+    </Link>
+  </div>
+</div>

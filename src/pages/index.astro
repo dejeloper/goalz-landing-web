@@ -1,0 +1,19 @@
+---
+import About from "@/components/about.astro";
+import Features from "@/components/features.astro";
+import Hero from "@/components/hero.astro";
+import Pricing from "@/components/pricing.astro";
+import Register from "@/components/register.astro";
+import Container from "@/components/shared/container.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Home" description="Welcome to my website">
+  <Container>
+    <Hero />
+    <Features />
+    <Pricing />
+    <Register />
+    <About />
+  </Container>
+</Layout>
