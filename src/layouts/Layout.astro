@@ -11,14 +11,14 @@ export interface Props {
 }
 
 const pathname = Astro.url.pathname;
-const site = Astro.site ? Astro.site : "https://ziele.lat/";
+const site = Astro.site ? Astro.site : "https://goalz.ziele.lat/";
 const canonicalURL = new URL(pathname, site).toString();
 
 const resolvedImageWithDomain = new URL("/opengraph.jpg", site).toString();
 
 const { title, description } = Astro.props;
 
-const makeTitle = title ? title + " | " + "Ziele Software" : "Ziele Software";
+const makeTitle = title ? title + " - " + "Software" : "Software";
 ---
 
 <!doctype html>
@@ -46,7 +46,7 @@ const makeTitle = title ? title + " | " + "Ziele Software" : "Ziele Software";
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Ziele Software website",
+          alt: "Goalz Ziele Software website",
         },
       }}
     />
